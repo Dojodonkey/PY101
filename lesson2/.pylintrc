@@ -99,8 +99,8 @@ evaluation = max(
     0,
     0 if fatal else 10.0 - (
         (float(5 * error + warning + refactor + convention) / statement) * 10
+        )
     )
-)
 reports=no
 score=yes
 
@@ -115,7 +115,7 @@ min-similarity-lines=4
 [SPELLING]
 
 max-spelling-suggestions=4
-spelling-ignore-comment-directives=fmt: on,fmt: 
+spelling-ignore-comment-directives=fmt: on,fmt:
 off,noqa:,noqa,nosec,isort:skip,mypy:
 spelling-store-unknown-words=no
 
@@ -145,4 +145,3 @@ dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
 ignored-argument-names=_.*|^ignored_|^unused_
 init-import=no
 redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
-
