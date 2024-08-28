@@ -479,6 +479,7 @@ never-returning-functions=sys.exit,argparse.parse_error
 
 [REPORTS]
 
+<<<<<<< HEAD
 # Python expression which should return a score less than or equal to 10. You
 # have access to the variables 'fatal', 'error', 'warning', 'refactor',
 # 'convention', and 'info' which contain the number of messages in each
@@ -496,6 +497,14 @@ msg-template=
 #output-format=
 
 # Tells whether to display a full report or only the messages.
+=======
+evaluation = max(
+    0,
+    0 if fatal else 10.0 - (
+        (float(5 * error + warning + refactor + convention) / statement) * 10
+        )
+    )
+>>>>>>> improvements
 reports=no
 
 # Activate the evaluation score.
@@ -524,6 +533,7 @@ min-similarity-lines=4
 
 # Limits count of emitted suggestions for spelling mistakes.
 max-spelling-suggestions=4
+<<<<<<< HEAD
 
 # Spelling dictionary name. No available dictionaries : You need to install
 # both the python package and the system dependency for enchant to work..
@@ -541,6 +551,10 @@ spelling-private-dict-file=
 
 # Tells whether to store unknown words to the private dictionary (see the
 # --spelling-private-dict-file option) instead of raising a message.
+=======
+spelling-ignore-comment-directives=fmt: on,fmt:
+off,noqa:,noqa,nosec,isort:skip,mypy:
+>>>>>>> improvements
 spelling-store-unknown-words=no
 
 
@@ -611,6 +625,7 @@ signature-mutators=
 
 [VARIABLES]
 
+<<<<<<< HEAD
 # List of additional names supposed to be defined in builtins. Remember that
 # you should avoid defining new builtins when possible.
 additional-builtins=
@@ -638,4 +653,11 @@ init-import=no
 
 # List of qualified module names which can have objects that can redefine
 # builtins.
+=======
+allow-global-unused-variables=yes
+callbacks=cb_,_cb
+dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+ignored-argument-names=_.*|^ignored_|^unused_
+init-import=no
+>>>>>>> improvements
 redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
