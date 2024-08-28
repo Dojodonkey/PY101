@@ -1,4 +1,5 @@
 {
+  "en": {
     "welcome": "Welcome to the Calculator",
     "first": "What's the first number?",
     "second": "What's the second number?",
@@ -6,4 +7,23 @@
     "perform": "What operation would you like to perform?\n1. Add\n2. Subtract\n3. Multiply\n4. Divide",
     "invalid input": "You must choose 1, 2, 3 or 4",
     "again": "Would you like to perform another calculation? Y/N"
+  },
+  "es": {
+    "welcome": "Bienvenido a la Calculadora",
+    "first": "¿Cuál es el primer número?",
+    "second": "¿Cuál es el segundo número?",
+    "invalid number": "Hmm.. eso no parece un número válido.",
+    "perform": "¿Qué operación desea realizar?\n1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir",
+    "invalid input": "Debe elegir 1, 2, 3 o 4",
+    "again": "¿Desea realizar otro cálculo? S/N"
+  },
+  "pt": {
+    "welcome": "Bem-vindo à Calculadora",
+    "first": "Qual é o primeiro número?",
+    "second": "Qual é o segundo número?",
+    "invalid number": "Hmm.. isso não parece um número válido.",
+    "perform": "Que operação você gostaria de realizar?\n1. Somar\n2. Subtrair\n3. Multiplicar\n4. Dividi",
+    "invalid input": "Você deve escolher 1, 2, 3 ou 4",
+    "again": "Gostaria de fazer outro cálculo? S/N"
   }
+}
