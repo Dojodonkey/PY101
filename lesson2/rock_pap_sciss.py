@@ -1,49 +1,52 @@
 """Rock Paper Scissors Module"""
 import random
 
-#constant
-VALID_CHOICE = ['rock', 'paper', 'scissors']
+# Constants
+VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard']
 
-#function for prompts
+# Function for prompts
 def prompt(message):
     print(f'==> {message}')
 
-#function for output user & computer choices
+# Function for output user & computer choices
 def choices_display(user, computer):
-    prompt(f'You chose: {choice}, computer chose: {computer_choice}')
+    prompt(f'You chose: {user}, computer chose: {computer}')
 
-    #conditions for user win
-    if ((choice == 'rock' and computer_choice == 'scissors') or
-        (choice == 'scissors' and computer_choice == 'paper') or
-        (choice == 'paper' and computer_choice == 'rock')):
-        prompt('You win!')
-    #conditions for computer win
-    elif ((computer_choice == 'rock' and choice == 'scissors') or
-        (computer_choice == 'scissors' and choice == 'paper') or
-        (computer_choice == 'paper' and choice == 'rock')):
-        prompt('Computer wins!')
-    #case of tie
+# Function to determine the winner
+def determine_winner(user, computer):
+    if user == computer:
+        return "It's a tie"
+    elif ((user == 'rock' and computer in ['scissors', 'lizard']) or
+          (user == 'paper' and computer in ['rock', 'spock']) or
+          (user == 'scissors' and computer in ['paper', 'lizard']) or
+          (user == 'lizard' and computer in ['paper', 'spock']) or
+          (user == 'spock' and computer in ['rock', 'scissors'])):
+        return 'You win!'
     else:
-        prompt("It's a tie")
+        return 'Computer wins!'
 
-#while True for game repition
+# Main game loop
 while True:
-    #user input
-    prompt(f'Choose one: {', '.join(VALID_CHOICE)}')
-    choice = input()
+    # User input
+    prompt(f'Choose one: {", ".join(VALID_CHOICES)}')
+    choice = input().lower()
 
-    #invalid user input
-    while choice not in VALID_CHOICE:
-        prompt('Thats not a valid input')
-        choice = input()
+    # Invalid user input
+    while choice not in VALID_CHOICES:
+        prompt('That\'s not a valid input')
+        choice = input().lower()
 
-    #computer input
-    computer_choice = random.choice(VALID_CHOICE)
+    # Computer input
+    computer_choice = random.choice(VALID_CHOICES)
 
-    #call choices display
+    # Display choices
     choices_display(choice, computer_choice)
 
-    #play again option
+    # Determine and display winner
+    result = determine_winner(choice, computer_choice)
+    prompt(result)
+
+    # Play again option
     while True:
         prompt('Play again? Y/N')
         y_n = input().lower()
@@ -52,7 +55,8 @@ while True:
             break
         else:
             prompt("That's not a valid answer")
-            prompt('Play again? Y/N')
 
-    if y_n[0] == 'n':
+    if y_n.startswith('n'):
         break
+
+prompt('Thanks for playing!')
