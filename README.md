@@ -1,2 +1,5 @@
-Included all excercises from Lauch School. 
-Each file includes the prompt and solution. 
+Includes all excercises from Lauch School. 
+Each file tries to include the prompt and solution. 
+
+Organized by directory/chapter. 
+
